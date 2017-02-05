@@ -1,8 +1,5 @@
 package com.ferrite;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -14,27 +11,18 @@ public class Main {
 		long beginTime = System.nanoTime();
 		long limit = 600_851_475_143L;
 
-		long factor = 1L;
+		long factor = 2L;
 
-		List<Long> primes = new ArrayList<>();
-
-		for (long i = 2L; limit != 1L; ++i) {
-			boolean notAdded = true;
-			while (limit % i == 0) {
-				limit /= i;
-				if (notAdded) {
-					primes.add(i);
-					notAdded = false;
-				}
+		for (; limit != 1L; ++factor) {
+			while (limit % factor == 0) {
+				limit /= factor;
 			}
 		}
 
-		for (Long prime : primes) {
-			factor *= prime;
-		}
-
 		System.out.println(String.format("Time: %.3f [ms]", (System.nanoTime() - beginTime) / 1000.));
-		System.out.println("Largest prime factor: " + factor);
+		System.out.println("Largest prime factor: " + --factor);
+
+		System.out.println("End.");
 
 	}
 
