@@ -9,7 +9,7 @@ public class Main {
 		System.out.println("Iteration method.");
 
 		long beginTime = System.nanoTime();
-		long limit = 600_851_475_143L;
+		long limit = 357_600_851_475_143L;
 
 		long factor = 2L;
 
@@ -19,7 +19,7 @@ public class Main {
 			}
 		}
 
-		System.out.println(String.format("Time: %.3f [ms]", (System.nanoTime() - beginTime) / 1000.));
+		System.out.println(String.format("Time: %.3f [ms]", (System.nanoTime() - beginTime) / 1_000_000.));
 		System.out.println("Largest prime factor: " + --factor);
 
 		System.out.println("End.");
